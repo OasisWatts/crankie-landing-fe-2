@@ -1,0 +1,15 @@
+audio::-webkit-media-controls-timeline,
+video::-webkit-media-controls-timeline {
+    display: none;
+}
+
+audio::-webkit-media-controls,
+video::-webkit-media-controls {
+    display: none;
+}
+
+video {
+    /* width: 158px;
+    height: 346px; */
+    object-fit: cover;
+}

@@ -1,0 +1,50 @@
+/* Sections */
+.scroll-effect-section {
+    height: 100vh;
+    /*   min-height: 500px; */
+    position: relative;
+}
+
+.scroll-effect-section-no-effect {
+    /* min-height: 100vh; */
+    padding: 1.5rem;
+}
+
+/* Containers */
+.scroll-effect-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    clip: rect(auto, auto, auto, auto);
+    pointer-events: none;
+}
+
+.scroll-effect-middle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    padding: 0;
+    z-index: 99;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    pointer-events: all;
+}
+
+.scroll-effect-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+}

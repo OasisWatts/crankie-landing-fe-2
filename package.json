@@ -1,0 +1,39 @@
+{
+  "name": "Crankie",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://oasiswatts.github.io/crankie-landing-fe/",
+  "scripts": {
+    "dev": "next dev",
+    "deploy-linode": "next build && npx serve@latest out",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy-git": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@lottiefiles/react-lottie-player": "^3.5.4",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "aos": "^3.0.0-beta.6",
+    "axios": "^1.7.2",
+    "emailjs-com": "^3.2.0",
+    "eslint-config-next": "^14.2.4",
+    "gh-pages": "^6.1.1",
+    "next": "^14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.32.6",
+    "swiper": "^10.3.1",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/aos": "^3.0.7",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  }
+}
