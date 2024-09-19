@@ -6,7 +6,7 @@ import register_btn from '@/img/register_btn.svg'
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
 
-export default function Waitlist() {
+export default function Waitlist({ data }: { data: any }) {
     const router = useRouter();
 
     // 이미지 클릭 시 이동할 URL로 네이버 페이지를 지정
@@ -29,25 +29,25 @@ export default function Waitlist() {
 
             {/* 하단 이미지 및 인스타그램 아이콘 부분 */}
             <div className="bot w-full flex-1 flex flex-col sm:flex-row items-center justify-center">
-                <Image 
-                    unoptimized 
-                    src={register_btn} 
-                    alt="waitlist image" 
-                    width={240} 
-                    height={70} 
-                    className="rounded-sm mb-4 sm:mb-0 sm:mr-5" 
-                    onClick={handleRegisterClick} 
-                    style={{ cursor: "pointer" }} 
+                <Image
+                    unoptimized
+                    src={register_btn}
+                    alt="waitlist image"
+                    width={240}
+                    height={70}
+                    className="rounded-sm mb-4 sm:mb-0 sm:mr-5"
+                    onClick={handleRegisterClick}
+                    style={{ cursor: "pointer" }}
                 />
-                <Image 
-                    unoptimized 
-                    src={insta_img} 
-                    alt="instagram icon" 
-                    width={240} 
-                    height={70} 
-                    className="rounded-sm" 
-                    onClick={handleInstagramClick} 
-                    style={{ cursor: "pointer" }} 
+                <Image
+                    unoptimized
+                    src={insta_img}
+                    alt="instagram icon"
+                    width={240}
+                    height={70}
+                    className="rounded-sm"
+                    onClick={handleInstagramClick}
+                    style={{ cursor: "pointer" }}
                 />
             </div>
         </div>

@@ -1,9 +1,66 @@
-/** minwoo */
-export default function Navigation() {
 
-    return (
-        <div>
-            navigation
-        </div>
-    )
-}
+
+'use client';
+import React, { useEffect, useState } from 'react';
+
+const BarHeader: React.FC = () => {
+  const [isBar, setIsBar] = useState(false);
+
+  const data = {
+    crankieImage: "/img/crankie_logo.jpg",
+    menus: ["소개", "기능", "서비스"],
+    sections: ["section1", "section2", "section3"], 
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsBar(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div
+      id="bar-header"
+      className={`w-full p-4 flex items-center justify-center h-[65px] transition-colors duration-300 ${
+        isBar
+          ? 'fixed top-0 left-0 right-0 bg-white shadow-md z-[100]'
+          : 'bg-[#2881DD] text-white'
+      }`}
+    >
+      <img
+        src={data.crankieImage}
+        className="absolute left-4 h-8 w-auto"
+      />
+      <nav className="flex space-x-20">
+        {data.menus.map((menu, index) => (
+          <a
+            key={index}
+            href={`#${data.sections[index]}`}
+            className={`text-sm sm:text-base lg:text-lg font-bold transition-colors duration-300 ${
+              isBar ? 'text-[#2881DD]' : 'text-white'
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              const target = document.getElementById(data.sections[index]);
+              if (target) {
+                const yOffset = -65; 
+                const yPosition =
+                  target.getBoundingClientRect().top +
+                  window.pageYOffset +
+                  yOffset;
+                window.scrollTo({ top: yPosition, behavior: 'smooth' });
+              }
+            }}
+          >
+            {menu}
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
+};
+
+export default BarHeader;

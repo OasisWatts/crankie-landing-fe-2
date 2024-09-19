@@ -1,3 +1,4 @@
+
 'use client'
 
 import img_tmp from "@/img/front-logo.svg";
@@ -13,7 +14,10 @@ export default function Section1({ data }: { data: { title1: string, title2: str
     };
 
     return (
-        <div className="front text-center w-full h-screen flex flex-col items-center justify-center bg-[#2881DD] p-10 whitespace-nowrap">
+        <div
+            id="section1" // 네비게이션바 id 지정했습니다.
+            className="front text-center w-full h-screen flex flex-col items-center justify-center bg-[#2881DD] p-10 whitespace-nowrap"
+        >
             <div
                 className="top flex flex-col w-full items-center justify-center mt-5"
                 style={{ flexBasis: '50%' }}
@@ -25,7 +29,7 @@ export default function Section1({ data }: { data: { title1: string, title2: str
                     {data.title2}
                 </h1>
                 <h1 className="text-base sm:text-3xl font-extrabold text-[#A5CDF7]">
-                    빠른 프리프로덕션 - 크랭이
+                    빠른 프리프로덕션 - 크랭이123123
                 </h1>
             </div>
             <div
