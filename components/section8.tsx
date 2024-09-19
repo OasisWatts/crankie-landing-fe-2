@@ -6,7 +6,7 @@ import register_btn from '@/img/register_btn.svg'
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
 
-export default function Features() {
+export default function Waitlist() {
     const router = useRouter();
 
     // 이미지 클릭 시 이동할 URL로 네이버 페이지를 지정
@@ -20,7 +20,7 @@ export default function Features() {
     }
 
     return (
-        <div className="bg-gray-500 text-center w-full h-screen flex flex-col items-center justify-center p-4">
+        <div className="bg-[#D1E8FF] text-center w-full h-screen flex flex-col items-center justify-center p-4">
             {/* 상단 텍스트 부분 */}
             <div className="top w-full flex-1 flex flex-col items-center justify-end p-4 sm:ml-10">
                 <h1 className="text-3xl sm:text-5xl font-extrabold">사전 등록하고,</h1>

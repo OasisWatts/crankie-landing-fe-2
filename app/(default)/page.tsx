@@ -6,6 +6,7 @@ import jsonData from "@/app/data/data.json";
 import Section6 from "@/components/section6";
 import Section2 from "@/components/section2";
 import Section7 from "@/components/section7";
+import Section8 from "@/components/section8";
 
 export const metadata = {
   title: '크랭이 - 빠른 크랭크인을 위한 프리프로덕션 협업툴',
@@ -23,6 +24,7 @@ export default function Home() {
       <Section5 data={jsonData.FeatureCasting} />
       <Section6 />
       <Section7 />
+      <Section8 />
     </div>
   )
 }
