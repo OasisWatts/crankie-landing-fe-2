@@ -25,7 +25,7 @@ export default function Section1({ data }: { data: { title1: string, title2: str
                     {data.title2}
                 </h1>
                 <h1 className="text-base sm:text-3xl font-extrabold text-[#A5CDF7]">
-                    빠른 프리프로덕션 - 크랭이
+                    빠른 프리프로덕션 - 크랭이123123
                 </h1>
             </div>
             <div
