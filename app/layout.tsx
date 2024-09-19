@@ -1,18 +1,14 @@
 import Script from 'next/script'
 import './css/style.css'
 
-import { Nunito, Rubik } from 'next/font/google'
+import localFont from 'next/font/local'
 
-const nunito = Nunito({
-  subsets: ['latin'],
-  variable: '--font-nunito',
-  display: 'swap'
-})
-const rubik = Rubik({
-  subsets: ['latin'],
-  variable: '--font-rubik',
+const pretendard = localFont({
+  src: '/fonts/PretendardVariable.woff2',
   display: 'swap',
+  weight: '45 920',
 })
+
 export const metadata = {
   title: 'Layout',
   description: 'Layout',
@@ -25,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${nunito.variable} ${rubik.variable} font-nunito antialiased bg-white text-gray-900 tracking-tight`}>
+      <body className="font-pretendard antialiased bg-white text-gray-900 tracking-tight">
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}
         </div>
