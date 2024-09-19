@@ -4,6 +4,8 @@ import { useEffect } from 'react'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Navigation from '@/components/navigation'
+import Footer from '@/components/footer'
 
 export default function DefaultLayout({
   children,
@@ -23,7 +25,9 @@ export default function DefaultLayout({
   return (
     <div>
       <main className="grow">
+        <Navigation />
         {children}
+        <Footer />
       </main>
     </div>
   )

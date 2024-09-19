@@ -1,4 +1,4 @@
-// File: /Users/oasis/programming/crankie-landing-fe/app/(default)/layout.tsx
+// File: /Users/oasis/programming/crankie-landing-fe-2/app/(default)/layout.tsx
 import * as entry from '../../../../app/(default)/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

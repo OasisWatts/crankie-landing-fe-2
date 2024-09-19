@@ -1,12 +1,10 @@
-import FeatureCasting from "@/components/feature_casting";
-import FeatureTeamSpace from "@/components/feature_teamspace";
-import Front from "@/components/front";
-import Preparation from "@/components/preparation";
-import Problem from "@/components/problem";
-import Solution from "@/components/solution";
-import Waitlist from "@/components/wailitst";
+import Section5 from "@/components/section5";
+import Section1 from "@/components/section1";
+import Section3 from "@/components/section3";
+import Section4 from "@/components/section4";
 import jsonData from "@/app/data/data.json";
-import ClientService from "@/components/client_service";
+import Section6 from "@/components/section6";
+import Section2 from "@/components/section2";
 
 export const metadata = {
   title: '크랭이 - 빠른 크랭크인을 위한 프리프로덕션 협업툴',
@@ -17,14 +15,12 @@ export default function Home() {
 
   return (
     <div>
-      <Front data={jsonData.Front} />
-      <Problem data={jsonData.Problem} />
-      <Solution data={jsonData.Solution} />
-      <FeatureCasting data={jsonData.FeatureCasting} />
-      {/* <FeatureTeamSpace data={jsonData.FeatureTeamSpace} /> */}
-      <Preparation data={jsonData.Preparation} />
-      <ClientService data={jsonData.ClientService} />
-      <Waitlist data={jsonData.Waitlist} />
+      <Section1 data={jsonData.Front} />
+      <Section2 />
+      <Section3 data={jsonData.Problem} />
+      <Section4 data={jsonData.Solution} />
+      <Section5 data={jsonData.FeatureCasting} />
+      <Section6 />
     </div>
   )
 }
