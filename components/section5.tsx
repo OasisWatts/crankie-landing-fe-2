@@ -15,21 +15,22 @@ export default function Section5({ data }: { data: any }) {
           <Image unoptimized src={img_tmp} alt="check icon" width={50} height={50} className="rounded-sm" />
         </div>
         <div className="title text-3xl md:text-4xl lg:text-5xl font-extrabold mt-5 mb-5 text-center">
-          {data.title}
+          시나리오 작성에서 촬영 계획 완성까지 팀원과 공유하고 함께 작업하세요
         </div>
-        <div className="subtitle font-bold text-sm sm:text-base lg:text-lg font-bold text-gray-400 text-center">
+        {/* <div className="subtitle font-bold text-sm sm:text-base lg:text-lg font-bold text-gray-400 text-center">
           크랭이는 앞으로도, 드라마/영화 제작팀에 필요한
         </div>
         <div className="subtitle font-bold text-sm sm:text-base lg:text-lg font-bold text-gray-400 text-center">
           다양한 서비스를 준비하고 있습니다.
-        </div>
+        </div> */}
       </div>
       <div
         className="bot w-full flex-1 flex flex-col items-center justify-center p-4 mt-10"
         style={{ flexBasis: '80%' }}
       >
+        {/** first block */}
         <div
-          className="firstBlock w-full flex flex-col md:flex-row items-center justify-center mb-10"
+          className="w-full flex flex-col md:flex-row items-center justify-center mb-10"
           style={{ flexBasis: '50%' }}
         >
           <div className="left flex-1 flex items-center justify-center md:justify-end mb-6 md:mb-0 ml-1">
@@ -45,19 +46,19 @@ export default function Section5({ data }: { data: any }) {
             </div>
           </div>
           <div className="right flex-1 flex flex-col items-center md:items-start justify-center text-center md:text-left px-4">
-            <div className="feature text-xl font-bold mb-4">
-              <div className="flex flex-col md:flex-row md:text-left text-center">
-                <h1 className="text-[#2881DD] text-2xl font-extrabold">귀찮았던&nbsp;</h1>
-                <h1 className="text-2xl font-extrabold">메일 정리와</h1>
-              </div>
-              <h1 className="text-2xl">{data.feature1_2}</h1>
+            <div className="text-2xl font-extrabold mb-4">
+              <p> 크랭이는 클릭 한 번에</p>
+              <p> 시나리오를 씬 리스트로</p>
             </div>
-            <div className="f1 font-bold text-sm sm:text-base lg:text-lg text-gray-400 text-center md:text-left">쇼츠, 릴스 형식으로</div>
-            <div className="f1 font-bold text-sm sm:text-base lg:text-lg text-gray-400 text-center md:text-left">손 쉽게 확인할 수 있어요.</div>
+            <div className="font-bold text-sm sm:text-base lg:text-lg text-gray-400">
+              <p>쇼츠, 릴스 형식으로</p>
+              <p>손 쉽게 확인할 수 있어요.</p>
+            </div>
           </div>
         </div>
+        {/** second block */}
         <div
-          className="secondBlock w-full flex flex-col md:flex-row-reverse items-center justify-center mb-20"
+          className="w-full flex flex-col md:flex-row-reverse items-center justify-center mb-10"
           style={{ flexBasis: '50%' }}
         >
           <div className="left flex-1 flex items-center justify-center md:justify-start mb-6 md:mb-0">
@@ -74,10 +75,10 @@ export default function Section5({ data }: { data: any }) {
           </div>
           <div className="right flex-1 flex flex-col items-center md:items-end justify-center text-center md:text-right px-4">
             <div className="feature text-xl font-bold mb-4">
-              <h1 className="text-2xl font-extrabold">{data.feature2_1}</h1>
               <div className="flex flex-col md:flex-row-reverse md:text-right text-center">
-                <h1 className="text-2xl font-extrabold">확인 가능</h1>
-                <h1 className="text-[#2881DD] text-2xl font-extrabold">한 번에&nbsp;</h1>
+                <p>스토리보드 작성</p>
+                <h1 className="text-2xl font-extrabold">이미지 업로드를 통한</h1>
+                <h1 className="text-[#2881DD] text-2xl font-extrabold">간편한 스토리 보드 작성</h1>
               </div>
             </div>
             <div className="exp">
