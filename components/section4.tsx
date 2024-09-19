@@ -9,18 +9,26 @@ export default function Section4({ data }: { data: { title1: string, title2: str
             <div className="left flex-1 flex flex-col justify-center items-center text-center mb-8 md:mb-0 md:pr-4" style={{ flexBasis: "50%" }}>
                 <div className="title mb-10">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
-                        정리, 이제
+                        크랭이와 함께
                     </h1>
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
-                        {data.title2}.
+                        더 효율적인 영상 제작 과정을 경험하세요.
                     </h1>
                 </div>
                 <div className="content">
                     <h1 className="text-sm sm:text-base lg:text-lg font-bold text-[#A5CDF7]">
-                        {data.explanation1}
+                        시나리오부터 계획까지
                     </h1>
                     <h1 className="text-sm sm:text-base lg:text-lg font-bold text-[#A5CDF7] mt-2">
-                        {data.explanation2}
+                        캐스팅, 로케이션의 전 과정을
+                    </h1>
+                </div>
+                <div className="content">
+                    <h1 className="text-sm sm:text-base lg:text-lg font-bold text-[#A5CDF7]">
+                        더 빠르고 확실하게
+                    </h1>
+                    <h1 className="text-sm sm:text-base lg:text-lg font-bold text-[#A5CDF7] mt-2">
+                        간편하고 효율적으로
                     </h1>
                 </div>
             </div>
