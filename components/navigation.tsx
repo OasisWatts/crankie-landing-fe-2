@@ -1,15 +1,14 @@
-
-
 'use client';
 import React, { useEffect, useState } from 'react';
+import Image from "next/image";
+import crankieImage from "@/img/gif1.jpg";
 
 const BarHeader: React.FC = () => {
   const [isBar, setIsBar] = useState(false);
 
   const data = {
-    crankieImage: "/img/crankie_logo.jpg",
-    menus: ["소개", "기능", "서비스"],
-    sections: ["section1", "section2", "section3"], 
+    menus: ["사전예약", "문의하기"],
+    sections: ["section1", "section2"], 
   };
 
   useEffect(() => {
@@ -30,10 +29,17 @@ const BarHeader: React.FC = () => {
           : 'bg-[#2881DD] text-white'
       }`}
     >
-      <img
-        src={data.crankieImage}
-        className="absolute left-4 h-8 w-auto"
-      />
+      <div className="absolute left-4 h-8 w-auto">
+        <Image
+          unoptimized
+          src={crankieImage}
+          alt="Crankie Image"
+          width={50} 
+          height={50}
+          className="rounded-lg"
+        />
+      </div>
+
       <nav className="flex space-x-20">
         {data.menus.map((menu, index) => (
           <a
