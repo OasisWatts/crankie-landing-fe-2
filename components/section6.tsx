@@ -1,55 +1,61 @@
-/** J */
-'use client'
+/** minwoo */ 
+'use client';
+import React from 'react';
+import Image from "next/image";
+import box1Image from "@/img/gif1.jpg"; // Replace with actual path
+import box2Image from "@/img/gif1.jpg"; // Replace with actual path
+import box3Image from "@/img/gif1.jpg"; // Replace with actual path
+import firstGif from "@/img/gif1.jpg"; // Replace with actual path
 
-import insta_img from '@/img/insta_btn.svg'
-import register_btn from '@/img/register_btn.svg'
-import Image from "next/image"
-import { useRouter } from 'next/navigation'
-
-export default function Waitlist({ data }: { data: any }) {
-    const router = useRouter();
-
-    // 이미지 클릭 시 이동할 URL로 네이버 페이지를 지정
-    const handleRegisterClick = () => {
-        window.open('https://forms.gle/NwWQRPDDdc1z4iVo8', '_blank');
-    }
-
-    // 인스타그램 아이콘 클릭 시 새로운 탭에서 인스타그램 페이지를 열기
-    const handleInstagramClick = () => {
-        window.open('https://www.instagram.com/crankie._/', '_blank');
-    }
-
+export default function Section2() {
     return (
-        <div className="bg-[#D1E8FF] text-center w-full h-screen flex flex-col items-center justify-center p-4">
-            {/* 상단 텍스트 부분 */}
-            <div className="top w-full flex-1 flex flex-col items-center justify-end p-4 sm:ml-10">
-                <h1 className="text-3xl sm:text-5xl font-extrabold">사전 등록하고,</h1>
-                <h1 className="text-3xl sm:text-5xl font-extrabold">크랭이의 소식을 빠르게 만나보세요</h1>
-            </div>
-
-            {/* 하단 이미지 및 인스타그램 아이콘 부분 */}
-            <div className="bot w-full flex-1 flex flex-col sm:flex-row items-center justify-center">
-                <Image
-                    unoptimized
-                    src={register_btn}
-                    alt="waitlist image"
-                    width={240}
-                    height={70}
-                    className="rounded-sm mb-4 sm:mb-0 sm:mr-5"
-                    onClick={handleRegisterClick}
-                    style={{ cursor: "pointer" }}
-                />
-                <Image
-                    unoptimized
-                    src={insta_img}
-                    alt="instagram icon"
-                    width={240}
-                    height={70}
-                    className="rounded-sm"
-                    onClick={handleInstagramClick}
-                    style={{ cursor: "pointer" }}
-                />
-            </div>
+      <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white">
+        <div className="mb-8 text-center">
+          <h1 className="text-5xl sm:text-5xl md:text-5xl font-bold text-black-100">
+            최신 기술을 활용한 <br />
+            새로운 제작 과정을 경험하세요.
+          </h1>
         </div>
-    )
+        <div className="w-[80%] max-w-4xl flex items-center justify-center">
+          <div className="flex flex-col justify-between h-[300px] md:h-[500px] mr-8">
+            <div className="h-[160px] w-[160px] bg-[#e7e9d9] rounded-lg flex items-center justify-center">
+              <Image
+                src={box1Image}
+                alt="박스 1 이미지"
+                width={160}
+                height={160}
+                className="w-full h-full rounded-lg object-cover"
+              />
+            </div>
+            <div className="h-[160px] w-[160px] bg-[#e7e9d9] rounded-lg flex items-center justify-center">
+              <Image
+                src={box2Image}
+                alt="박스 2 이미지"
+                width={160}
+                height={160}
+                className="w-full h-full rounded-lg object-cover"
+              />
+            </div>
+            <div className="h-[160px] w-[160px] bg-[#e7e9d9] rounded-lg flex items-center justify-center">
+              <Image
+                src={box3Image}
+                alt="박스 3 이미지"
+                width={160}
+                height={160}
+                className="w-full h-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+          <div className="w-[80%] max-w-4xl h-[300px] md:h-[500px] bg-[#e7e9d9] rounded-lg flex items-center justify-center">
+            <Image
+              src={firstGif}
+              alt="크랭이 GIF"
+              width={500} 
+              height={500}
+              className="w-full h-full rounded-lg object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    );
 }

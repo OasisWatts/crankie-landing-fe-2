@@ -4,7 +4,7 @@
 import img_tmp from "@/img/front-logo.svg";
 import Image from "next/image";
 
-/** minwoo */
+/** J */
 export default function Section1({ data }: { data: { title1: string, title2: string } }) {
     const handleScroll = () => {
         const nextSection = document.getElementById("problem");
@@ -15,7 +15,6 @@ export default function Section1({ data }: { data: { title1: string, title2: str
 
     return (
         <div
-            id="section1" // 네비게이션바 id 지정했습니다.
             className="front text-center w-full h-screen flex flex-col items-center justify-center bg-[#2881DD] p-10 whitespace-nowrap"
         >
             <div
