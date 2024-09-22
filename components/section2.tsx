@@ -1,6 +1,6 @@
 /** minwoo */
 import Image from "next/image";
-import firstGif from "@/img/gif2.jpg";
+import firstGif from "@/img/first_gif.gif";
 
 export default function Section2() {
   return (
@@ -13,13 +13,12 @@ export default function Section2() {
         </h1>
       </div>
 
-      <div className="w-[80%] max-w-4xl h-[300px] md:h-[500px] bg-[#e7e9d9] rounded-lg flex items-center justify-center">
+      <div className="flex justify-center">
         <Image
           src={firstGif} 
-          alt="movie jpg"
-          layout="responsive"
-          width={700}
-          height={500}
+          alt="movie gif"
+          width={1400} 
+          height={1000} 
           className="rounded-lg"
         />
       </div>
