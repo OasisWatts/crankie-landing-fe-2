@@ -1,4 +1,3 @@
-
 'use client'
 
 import img_tmp from "@/img/front-logo.svg";
@@ -7,7 +6,7 @@ import Image from "next/image";
 /** J */
 export default function Section1({ data }: { data: { title1: string, title2: string } }) {
     const handleScroll = () => {
-        const nextSection = document.getElementById("problem");
+        const nextSection = document.getElementById("problem"); // 스크롤할 섹션 타겟
         if (nextSection) {
             nextSection.scrollIntoView({ behavior: "smooth" });
         }
@@ -15,6 +14,7 @@ export default function Section1({ data }: { data: { title1: string, title2: str
 
     return (
         <div
+            id="section1"  // id 추가
             className="front text-center w-full h-screen flex flex-col items-center justify-center bg-[#2881DD] p-10 whitespace-nowrap"
         >
             <div
