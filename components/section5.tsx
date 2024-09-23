@@ -100,6 +100,7 @@ export function Block({ isRight, gif, tag, highlight, title, texts }: BlockInter
       className={`w-full flex flex-col ${isRight ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-center mb-10`}
       style={{ flexBasis: '50%' }}
     >
+      <div className='w-full h-[0.1rem] bg-[#E6EADC] md:hidden mb-10'></div>
       <div className={`flex-1 flex items-center justify-center ${isRight ? "md:justify-start" : "md:justify-end"} mb-6 md:mb-0`}>
         <div className="rounded">
           <Image
