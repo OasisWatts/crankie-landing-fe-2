@@ -5,31 +5,41 @@ import Image, { StaticImageData } from 'next/image';
 
 const words = ["간편하게", "확실하게", "편하게", "효율적으로"]
 
-
-/** Leah */
 export default function Section5({ data }: { data: any }) {
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-white p-10 whitespace-nowrap">
-      {/** top container */}
+    <>
+      <Introduction />
+      <Blocks />
+    </>
+  )
+}
+function Introduction() {
+  return (
+    <div className="w-full flex flex-col justify-center items-center bg-white p-10 whitespace-nowrap">
       <div
-        className="top w-full flex flex-col items-center justify-center p-4 my-[3rem] md:my-[6rem]"
+        className="top w-full flex flex-col items-center justify-center my-[3rem] md:my-[6rem]"
         style={{ flexBasis: '20%' }}
       >
-        <p className='text-base md:text-lg lg:text-xl text-[#818D62]'>
+        <p className='text-sm md:text-base lg:text-lg text-[#818D62]'>
           시나리오부터 계획까지
         </p>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-2 lg:mt-5 text-[#042F35]">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mt-2 lg:mt-5 text-[#042F35]">
           모든 영상 제작 과정
         </h1>
-        <div className='mt-10 md:mt-[4rem] lg:mt-[6rem]'>
-          {words.map((word) => (
-            <div className='inline-block mx-3 md:mx-5 py-2 px-3 md:py-3 md:px-6 rounded-md md:rounded-xl text-sm md:text-lg bg-[#042F35] text-[#C8F169]'>
-              {word}
-            </div>
-          ))}
+        <div className='text-xl md:text-2xl lg:text-3xl font-bold mt-10 lg:mt-15'>
+          <p className='inline text-[#286D35] mr-2'>simple</p>
+          <p className='inline mr-2'>하고</p>
+          <p className='inline text-[#286D35] mr-2'>creative</p>
+          <p className='inline'>하게</p>
         </div>
       </div>
-      {/** block container */}
+    </div>
+  )
+}
+/** Leah */
+function Blocks() {
+  return (
+    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-[#F6F9F0] p-10 whitespace-nowrap">
       <div
         className="bot w-full flex-1 flex flex-col items-center justify-center p-4 mt-10"
         style={{ flexBasis: '80%' }}
@@ -38,10 +48,10 @@ export default function Section5({ data }: { data: any }) {
         <Block
           isRight={true}
           gif={gif1_tmp}
-          tag="씬 리스트 작성"
-          highlight='크랭이는 클릭 한 번에'
+          tag="씬 리스트"
+          highlight='클릭 한 번에,'
           title="시나리오를 씬 리스트로"
-          texts={["클라이언트 리뷰, 레퍼런스 체크, 신원인증을 통해", "손 쉽게 확인할 수 있어요"]}
+          texts={["수정한 시나리오의 내용도", "빠르게 씬 리스트에 반영할 수 있습니다"]}
         />
         {/** second block */}
         <Block
@@ -101,8 +111,9 @@ export function Block({ isRight, gif, tag, highlight, title, texts }: BlockInter
           />
         </div>
       </div>
-      <div className={`flex-1 flex flex-col items-center ${isRight ? "md:items-end md:text-right md:pr-20" : "md:items-start md:text-left md:pl-20"} justify-center text-center`}>
-        <p className='text-xs sm:text-sm lg:text-md px-2 py-[0.1rem] mb-3 text-[#008415] bg-[#C8F169] rounded-xs'>{tag}</p>
+      <div className={`flex-1 flex flex-col items-center md:items-start md:text-left ${isRight ? "" : "md:pl-20"} justify-center text-center`}>
+        <p className='text-xs sm:text-sm lg:text-md font-bold mb-3 text-[#286D35]'>{tag}</p>
+        {/* <p className='text-xs sm:text-sm lg:text-md px-2 py-[0.1rem] mb-3 text-[#008415] bg-[#C8F169] rounded-xs'>{tag}</p> */}
         <div className="text-2xl md:text-xl lg:text-2xl font-bold mb-4">
           <p className='text-[#286D35]'> {highlight}</p>
           <p> {title}</p>
