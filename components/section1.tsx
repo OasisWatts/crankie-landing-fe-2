@@ -31,7 +31,7 @@ export default function Section1() {
       <div className="top flex items-start w-full max-w-7xl mx-auto">
         <div className="flex flex-col justify-start mr-[180px] self-start">
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-black">
-            영화, 드라마 영상 제작사를 위한
+            영화, 드라마 영상 제작자를 위한
           </h1>
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-black mt-2">
             초간편 영상 제작 솔루션
