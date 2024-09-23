@@ -3,6 +3,7 @@
 
 import insta_img from '@/img/insta_btn.svg'
 import register_btn from '@/img/register_btn.svg'
+import img1 from '@/img/section7_img1.png'
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
 
@@ -20,11 +21,25 @@ export default function Waitlist() {
     }
 
     return (
-        <div className="bg-[#D1E8FF] text-center w-full h-screen flex flex-col items-center justify-center p-4">
+        <div className="bg-[#F6F9F0] text-center w-full h-screen flex flex-col items-center justify-center p-4">
+            <div className="text-[#A9B291] top w-full flex-1 flex flex-col items-center justify-end sm:ml-10">
+                <h1 className="text-xl sm:text-3xl font-bold">크랭이는 영상 제작자의 편의를 위해</h1>
+                <h1 className="text-xl sm:text-3xl font-bold">최선을 다하겠습니다</h1>
+            </div>
+            <div className="img w-full flex-1 flex flex-row items-center justify-center">
+                <div className="img1">
+                    <Image
+                        src={img1}
+                        alt="img1"
+                        width={700}  // 기본 너비 설정
+                        height={250} // 기본 높이 설정
+                    />
+                </div>
+            </div>
             {/* 상단 텍스트 부분 */}
-            <div className="top w-full flex-1 flex flex-col items-center justify-end p-4 sm:ml-10">
-                <h1 className="text-3xl sm:text-5xl font-extrabold">사전 등록하고,</h1>
-                <h1 className="text-3xl sm:text-5xl font-extrabold">크랭이의 소식을 빠르게 만나보세요</h1>
+            <div className="text-[#2B6C36] top w-full flex-1 flex flex-col items-center justify-end sm:ml-10">
+                <h1 className="text-xl sm:text-3xl font-bold">지금 신청하시고</h1>
+                <h1 className="text-xl sm:text-3xl font-bold">크랭이의 빠른 소식과 무료 서비스 혜택을 받으세요</h1>
             </div>
 
             {/* 하단 이미지 및 인스타그램 아이콘 부분 */}
