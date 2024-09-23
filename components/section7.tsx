@@ -3,6 +3,10 @@
 
 import insta_img from '@/img/insta_btn.svg'
 import register_btn from '@/img/register_btn.svg'
+import beta_colored from '@/img/색o_무료 베타 버튼.svg'
+import beta from '@/img/색x_무료 베타 버튼.svg'
+import insta_colored from '@/img/색o_인스타 버튼.svg'
+import insta from '@/img/색x_인스타 버튼.svg'
 import img1 from '@/img/section7_img1.png'
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
@@ -46,7 +50,7 @@ export default function Waitlist() {
             <div className="bot w-full flex-1 flex flex-col sm:flex-row items-center justify-center">
                 <Image 
                     unoptimized 
-                    src={register_btn} 
+                    src={beta} 
                     alt="waitlist image" 
                     width={240} 
                     height={70} 
@@ -56,7 +60,7 @@ export default function Waitlist() {
                 />
                 <Image 
                     unoptimized 
-                    src={insta_img} 
+                    src={insta} 
                     alt="instagram icon" 
                     width={240} 
                     height={70} 
