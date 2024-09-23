@@ -67,7 +67,7 @@ export default function Section2() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white p-4 whitespace-nowrap">
       <div className="mb-40 text-center">
         <h1 className="text-5xl sm:text-5xl md:text-5xl font-bold text-black-100">
           최신 기술을 활용한 <br />
