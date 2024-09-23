@@ -7,7 +7,7 @@ const BarHeader: React.FC = () => {
   const [isBar, setIsBar] = useState(false);
 
   const data = {
-    menus: ["사전예약", "문의하기"],
+    menus: ["신청하기", "문의하기"],
     links: [
       "https://forms.gle/NwWQRPDDdc1z4iVo8",
       "https://www.instagram.com/crankie._/",
