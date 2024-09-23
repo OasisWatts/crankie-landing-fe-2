@@ -5,7 +5,7 @@ import firstGif from "@/img/first_gif.gif";
 export default function Section2() {
   return (
     <div
-      className="w-full min-h-screen flex flex-col items-center justify-center bg-white"
+      className="w-full min-h-screen flex flex-col items-center justify-center bg-white p-4 whitespace-nowrap"
     >
       <div className="mb-8 text-center">
         <h1 className="text-2xl sm:text-4xl md:text-4xl font-bold text-green-700">

@@ -7,7 +7,7 @@ const BarHeader: React.FC = () => {
   const [isBar, setIsBar] = useState(false);
 
   const data = {
-    menus: ["사전예약", "문의하기"],
+    menus: ["신청하기", "문의하기"],
     links: [
       "https://forms.gle/NwWQRPDDdc1z4iVo8",
       "https://www.instagram.com/crankie._/",
@@ -43,7 +43,7 @@ const BarHeader: React.FC = () => {
       className={`w-full p-4 flex items-center h-[65px] transition-colors duration-300 ${
         isBar
           ? "fixed top-0 left-0 right-0 bg-white shadow-md z-[100]"
-          : "bg-[#2881DD] text-white"
+          : "bg-[#E6EADC] text-white"
       }`}
     >
       <div className="flex items-center ml-40">

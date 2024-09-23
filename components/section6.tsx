@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 
 // 박스 아이콘 경로
-import box1Icon from '@/img/preparation_img1.svg';
-import box2Icon from '@/img/preparation_img2.svg';
-import box3Icon from '@/img/preparation_img3.svg';
+import box1Icon from '@/img/AI-scence-break.png';
+import box2Icon from '@/img/AI-location-icon.png';
+import box3Icon from '@/img/castin-short-icon.png';
 
 // 큰 박스에 들어갈 아이콘 경로
 import firstIcon from '@/img/preparation_img1.svg';
@@ -29,7 +29,7 @@ export default function Section2() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBox((prevBox) => {
-        const nextBox = (prevBox % totalBoxes) + 1; // 1 → 2 → 3 → 1 순환
+        const nextBox = (prevBox % totalBoxes) + 1;
         return nextBox;
       });
       setProgress(0); // 애니메이션을 다시 시작
@@ -67,24 +67,25 @@ export default function Section2() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white">
-      <div className="mb-40 text-center">
-        <h1 className="text-5xl sm:text-5xl md:text-5xl font-bold text-black-100">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white p-4 whitespace-nowrap">
+      <div className="mb-10 text-center">
+        <h1 className="text-4xl sm:text-4xl md:text-4xl font-bold text-black-100">
           최신 기술을 활용한 <br />
           새로운 제작 과정을 경험하세요.
         </h1>
       </div>
-      <div className="w-[80%] max-w-4xl flex items-center justify-center">
-        <div className="flex flex-col justify-between h-[300px] md:h-[500px] mr-8">
+
+      <div className="w-[80%] max-w-6xl flex items-center justify-center gap-x-36"> {/* 큰 박스와 작은 박스 사이의 간격을 더 넓게 조정 */}
+        <div className="flex flex-col justify-between h-[600px] gap-y-20"> {/* 작은 박스 간 세로 간격 */}
           {/* 박스 1 */}
           <div
-            className={`relative h-[160px] w-[160px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
+            className={`relative h-[180px] w-[180px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
               currentBox === 1 ? '' : 'filter grayscale' /* 비활성화 시 회색 처리 */
             }`}
             onClick={() => handleBoxClick(1)}
           >
             {/* 세로로 내려오는 시간 애니메이션 */}
-            <div className="absolute left-[-20px] top-0 w-2 h-full rounded-md" style={{
+            <div className="absolute left-[-10px] top-0 w-2 h-[180px] rounded-md" style={{
               background: getProgressBackground(1),
               transition: 'background 0.1s linear'
             }}></div>
@@ -92,20 +93,21 @@ export default function Section2() {
               unoptimized
               src={box1Icon}
               alt="박스 1 아이콘"
-              width={160}
-              height={160}
+              width={180}
+              height={180}
               className="w-full h-full rounded-lg object-cover"
             />
           </div>
+
           {/* 박스 2 */}
           <div
-            className={`relative h-[160px] w-[160px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
+            className={`relative h-[180px] w-[180px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
               currentBox === 2 ? '' : 'filter grayscale' /* 비활성화 시 회색 처리 */
             }`}
             onClick={() => handleBoxClick(2)}
           >
             {/* 세로로 내려오는 시간 애니메이션 */}
-            <div className="absolute left-[-20px] top-0 w-2 h-full rounded-md" style={{
+            <div className="absolute left-[-10px] top-0 w-2 h-[180px] rounded-md" style={{
               background: getProgressBackground(2),
               transition: 'background 0.1s linear'
             }}></div>
@@ -113,20 +115,21 @@ export default function Section2() {
               unoptimized
               src={box2Icon}
               alt="박스 2 아이콘"
-              width={160}
-              height={160}
+              width={180}
+              height={180}
               className="w-full h-full rounded-lg object-cover"
             />
           </div>
+
           {/* 박스 3 */}
           <div
-            className={`relative h-[160px] w-[160px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
+            className={`relative h-[180px] w-[180px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
               currentBox === 3 ? '' : 'filter grayscale' /* 비활성화 시 회색 처리 */
             }`}
             onClick={() => handleBoxClick(3)}
           >
             {/* 세로로 내려오는 시간 애니메이션 */}
-            <div className="absolute left-[-20px] top-0 w-2 h-full rounded-md" style={{
+            <div className="absolute left-[-10px] top-0 w-2 h-[180px] rounded-md" style={{
               background: getProgressBackground(3),
               transition: 'background 0.1s linear'
             }}></div>
@@ -134,21 +137,21 @@ export default function Section2() {
               unoptimized
               src={box3Icon}
               alt="박스 3 아이콘"
-              width={160}
-              height={160}
+              width={180}
+              height={180}
               className="w-full h-full rounded-lg object-cover"
             />
           </div>
         </div>
-        
-        {/* 큰 박스에 표시될 아이콘 */}
-        <div className="w-[80%] max-w-4xl h-[300px] md:h-[500px] bg-[#e7e9d9] rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out">
+
+        {/* 큰 박스 크기 증가 */}
+        <div className="w-[800px] h-[600px] border border-[#e7e9d9] bg-[#f4f5f0] rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out">
           <Image
             unoptimized
             src={getCurrentBoxIcon()}
             alt="큰 박스 아이콘"
-            width={500}
-            height={500}
+            width={600}
+            height={600}
             className="w-full h-full rounded-lg object-cover"
           />
         </div>
