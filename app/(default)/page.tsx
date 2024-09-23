@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div>
       <Section1 data={jsonData.Front} />
-      <Section2 />
+      {/* <Section2 /> */}
       <Section3 data={jsonData.Problem} />
       <Section4 data={jsonData.Solution} />
       <Section5 data={jsonData.FeatureCasting} />
