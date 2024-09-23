@@ -1,161 +1,235 @@
-/** minwoo */
+
 'use client';
 import React, { useState, useEffect } from 'react';
-import Image from "next/image";
+import Image from 'next/image';
 
 // 박스 아이콘 경로
 import box1Icon from '@/img/AI-scence-break.png';
 import box2Icon from '@/img/AI-location-icon.png';
 import box3Icon from '@/img/castin-short-icon.png';
 
-// 큰 박스에 들어갈 아이콘 경로
-import firstIcon from '@/img/preparation_img1.svg';
-import secondIcon from '@/img/preparation_img2.svg';
-import thirdIcon from '@/img/preparation_img3.svg';
-
 export default function Section2() {
-  const [currentBox, setCurrentBox] = useState(1); // 현재 선택된 박스
-  const [progress, setProgress] = useState(0); // 진행 애니메이션 상태
-  const totalBoxes = 3; // 총 박스 수
-  const intervalDuration = 3000; // 각 박스가 활성화되는 시간 (3초)
+  const [currentBox, setCurrentBox] = useState<number>(1);
+  const [progress, setProgress] = useState<number>(0);
+  const totalBoxes = 3;
+  const intervalDuration = 3000;
 
-  // 박스 클릭 시 큰 박스의 아이콘 변경
   const handleBoxClick = (boxNumber: number) => {
     setCurrentBox(boxNumber);
-    setProgress(0); // 진행 상태 초기화
+    setProgress(0); // 클릭 시 진행 상태 초기화
   };
 
-  // 3초마다 자동으로 박스 순환 및 시간 애니메이션
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBox((prevBox) => {
-        const nextBox = (prevBox % totalBoxes) + 1;
-        return nextBox;
-      });
-      setProgress(0); // 애니메이션을 다시 시작
+      setCurrentBox((prevBox) => (prevBox % totalBoxes) + 1); // 다음 박스로 이동
+      setProgress(0); // 진행 상태 초기화
     }, intervalDuration);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // 컴포넌트가 언마운트될 때 타이머 정리
   }, []);
 
-  // 진행 애니메이션을 3초마다 부드럽게 진행
   useEffect(() => {
     const progressInterval = setInterval(() => {
-      setProgress((prevProgress) => Math.min(prevProgress + (100 / (intervalDuration / 16.7)), 100)); // 60fps로 애니메이션
+      setProgress((prevProgress) =>
+        Math.min(prevProgress + 100 / (intervalDuration / 16.7), 100)
+      ); // 60fps로 애니메이션 업데이트
     }, 16.7);
 
-    return () => clearInterval(progressInterval);
+    return () => clearInterval(progressInterval); // 컴포넌트가 언마운트될 때 타이머 정리
   }, [currentBox]);
 
-  // 현재 박스에 따라 큰 박스에 표시할 아이콘 변경
-  const getCurrentBoxIcon = () => {
-    switch (currentBox) {
-      case 1:
-        return firstIcon;
-      case 2:
-        return secondIcon;
-      case 3:
-        return thirdIcon;
-      default:
-        return firstIcon;
+  // 아이콘 색상 채우기 애니메이션 (위에서 아래로)
+  const getBoxIconStyle = (boxNumber: number) => {
+    if (currentBox === boxNumber) {
+      return {
+        WebkitMaskImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1) ${progress}%, rgba(0, 0, 0, 0) ${progress}%)`,
+        maskImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1) ${progress}%, rgba(0, 0, 0, 0) ${progress}%)`,
+        filter: 'grayscale(0)', // 선택된 박스는 원래 색상
+        transition: 'mask-image 0.3s linear',
+      };
     }
-  };
-
-  // 대기 시간을 배경색과 동일하게 처리 (흰색 배경에 초록색 선)
-  const getProgressBackground = (boxNumber: number) => {
-    return currentBox === boxNumber ? `linear-gradient(to bottom, #286D35 ${progress}%, white ${progress}%)` : 'white';
+    return { filter: 'grayscale(100%)' }; // 회색 처리
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white p-4 whitespace-nowrap">
-      <div className="mb-10 text-center">
-        <h1 className="text-4xl sm:text-4xl md:text-4xl font-bold text-black-100">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white p-4">
+      <div className="mb-6 text-center">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black-100">
           최신 기술을 활용한 <br />
           새로운 제작 과정을 경험하세요.
         </h1>
       </div>
 
-      <div className="w-[80%] max-w-6xl flex items-center justify-center gap-x-36"> {/* 큰 박스와 작은 박스 사이의 간격을 더 넓게 조정 */}
-        <div className="flex flex-col justify-between h-[600px] gap-y-20"> {/* 작은 박스 간 세로 간격 */}
-          {/* 박스 1 */}
-          <div
-            className={`relative h-[180px] w-[180px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
-              currentBox === 1 ? '' : 'filter grayscale' /* 비활성화 시 회색 처리 */
-            }`}
-            onClick={() => handleBoxClick(1)}
-          >
-            {/* 세로로 내려오는 시간 애니메이션 */}
-            <div className="absolute left-[-10px] top-0 w-2 h-[180px] rounded-md" style={{
-              background: getProgressBackground(1),
-              transition: 'background 0.1s linear'
-            }}></div>
-            <Image
-              unoptimized
-              src={box1Icon}
-              alt="박스 1 아이콘"
-              width={180}
-              height={180}
-              className="w-full h-full rounded-lg object-cover"
-            />
-          </div>
-
-          {/* 박스 2 */}
-          <div
-            className={`relative h-[180px] w-[180px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
-              currentBox === 2 ? '' : 'filter grayscale' /* 비활성화 시 회색 처리 */
-            }`}
-            onClick={() => handleBoxClick(2)}
-          >
-            {/* 세로로 내려오는 시간 애니메이션 */}
-            <div className="absolute left-[-10px] top-0 w-2 h-[180px] rounded-md" style={{
-              background: getProgressBackground(2),
-              transition: 'background 0.1s linear'
-            }}></div>
-            <Image
-              unoptimized
-              src={box2Icon}
-              alt="박스 2 아이콘"
-              width={180}
-              height={180}
-              className="w-full h-full rounded-lg object-cover"
-            />
-          </div>
-
-          {/* 박스 3 */}
-          <div
-            className={`relative h-[180px] w-[180px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer ${
-              currentBox === 3 ? '' : 'filter grayscale' /* 비활성화 시 회색 처리 */
-            }`}
-            onClick={() => handleBoxClick(3)}
-          >
-            {/* 세로로 내려오는 시간 애니메이션 */}
-            <div className="absolute left-[-10px] top-0 w-2 h-[180px] rounded-md" style={{
-              background: getProgressBackground(3),
-              transition: 'background 0.1s linear'
-            }}></div>
-            <Image
-              unoptimized
-              src={box3Icon}
-              alt="박스 3 아이콘"
-              width={180}
-              height={180}
-              className="w-full h-full rounded-lg object-cover"
-            />
-          </div>
+      <div className="w-full max-w-6xl flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 lg:gap-20">
+        {/* 작은 박스들 */}
+        <div className="flex sm:flex-col justify-between items-center sm:h-[400px] md:h-[500px] lg:h-[600px] gap-4 sm:gap-6">
+          {[1, 2, 3].map((boxNumber) => (
+            <div
+              key={boxNumber}
+              className={`relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-[160px] lg:w-[160px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer`}
+              onClick={() => handleBoxClick(boxNumber)}
+            >
+              {/* 아이콘 애니메이션 (위에서 아래로 색 채워짐) */}
+              <div
+                className="absolute inset-0 rounded-lg"
+                style={getBoxIconStyle(boxNumber)}
+              >
+                <Image
+                  unoptimized
+                  src={
+                    boxNumber === 1
+                      ? box1Icon
+                      : boxNumber === 2
+                      ? box2Icon
+                      : box3Icon
+                  }
+                  alt={`박스 ${boxNumber} 아이콘`}
+                  width={180}
+                  height={180}
+                  className="w-full h-full rounded-lg object-cover"
+                />
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* 큰 박스 크기 증가 */}
-        <div className="w-[800px] h-[600px] border border-[#e7e9d9] bg-[#f4f5f0] rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out">
+        {/* 큰 박스 */}
+        <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[600px] h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] border border-[#e7e9d9] bg-[#f4f5f0] rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out overflow-hidden">
           <Image
             unoptimized
-            src={getCurrentBoxIcon()}
+            src={
+              currentBox === 1
+                ? box1Icon
+                : currentBox === 2
+                ? box2Icon
+                : box3Icon
+            }
             alt="큰 박스 아이콘"
             width={600}
             height={600}
-            className="w-full h-full rounded-lg object-cover"
+            className="max-w-full max-h-full object-contain"
           />
         </div>
       </div>
     </div>
   );
 }
+
+
+
+
+// // 그냥 유지하면서 시간 흐르는
+// 'use client';
+// import React, { useState, useEffect } from 'react';
+// import Image from 'next/image';
+
+// // 박스 아이콘 경로
+// import box1Icon from '@/img/AI-scence-break.png';
+// import box2Icon from '@/img/AI-location-icon.png';
+// import box3Icon from '@/img/castin-short-icon.png';
+
+// export default function Section2() {
+//   const [currentBox, setCurrentBox] = useState<number>(1);
+//   const [progress, setProgress] = useState<number>(0);
+//   const totalBoxes = 3;
+//   const intervalDuration = 3000;
+
+//   const handleBoxClick = (boxNumber: number) => {
+//     setCurrentBox(boxNumber);
+//     setProgress(0); // 클릭 시 진행 상태 초기화
+//   };
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentBox((prevBox) => (prevBox % totalBoxes) + 1); // 다음 박스로 이동
+//       setProgress(0); // 진행 상태 초기화
+//     }, intervalDuration);
+
+//     return () => clearInterval(interval); // 컴포넌트가 언마운트될 때 타이머 정리
+//   }, []);
+
+//   useEffect(() => {
+//     const progressInterval = setInterval(() => {
+//       setProgress((prevProgress) =>
+//         Math.min(prevProgress + 100 / (intervalDuration / 16.7), 100)
+//       ); // 60fps로 애니메이션 업데이트
+//     }, 16.7);
+
+//     return () => clearInterval(progressInterval); // 컴포넌트가 언마운트될 때 타이머 정리
+//   }, [currentBox]);
+
+//   // 아이콘에 색상을 위에서 아래로 채워지는 스타일
+//   const getBoxIconStyle = (boxNumber: number) => {
+//     if (currentBox === boxNumber) {
+//       return {
+//         background: `linear-gradient(to bottom, rgba(0, 0, 0, 0) ${progress}%, rgba(0, 0, 0, 1) ${progress}%)`,
+//         filter: 'grayscale(0)', // 선택된 아이콘은 색상 표시
+//         transition: 'background 0.3s linear, filter 0.3s linear',
+//       };
+//     }
+//     return { filter: 'grayscale(100%)' }; // 선택되지 않은 아이콘은 회색으로 유지
+//   };
+
+//   return (
+//     <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white p-4">
+//       <div className="mb-6 text-center">
+//         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black-100">
+//           최신 기술을 활용한 <br />
+//           새로운 제작 과정을 경험하세요.
+//         </h1>
+//       </div>
+
+//       <div className="w-full max-w-6xl flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 lg:gap-20">
+//         {/* 작은 박스들 */}
+//         <div className="flex sm:flex-col justify-between items-center sm:h-[400px] md:h-[500px] lg:h-[600px] gap-4 sm:gap-6">
+//           {[1, 2, 3].map((boxNumber) => (
+//             <div
+//               key={boxNumber}
+//               className={`relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-[160px] lg:w-[160px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer`}
+//               onClick={() => handleBoxClick(boxNumber)}
+//             >
+//               {/* 아이콘 애니메이션 (위에서 아래로 색 채워짐) */}
+//               <div
+//                 className="absolute inset-0 rounded-lg"
+//                 style={getBoxIconStyle(boxNumber)}
+//               >
+//                 <Image
+//                   unoptimized
+//                   src={
+//                     boxNumber === 1
+//                       ? box1Icon
+//                       : boxNumber === 2
+//                       ? box2Icon
+//                       : box3Icon
+//                   }
+//                   alt={`박스 ${boxNumber} 아이콘`}
+//                   width={180}
+//                   height={180}
+//                   className="w-full h-full rounded-lg object-cover"
+//                 />
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* 큰 박스 */}
+//         <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[600px] h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] border border-[#e7e9d9] bg-[#f4f5f0] rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out overflow-hidden">
+//           <Image
+//             unoptimized
+//             src={
+//               currentBox === 1
+//                 ? box1Icon
+//                 : currentBox === 2
+//                 ? box2Icon
+//                 : box3Icon
+//             }
+//             alt="큰 박스 아이콘"
+//             width={600}
+//             height={600}
+//             className="max-w-full max-h-full object-contain"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
