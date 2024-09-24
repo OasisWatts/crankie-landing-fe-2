@@ -31,15 +31,15 @@ export default function Section1() {
         {/* 텍스트 섹션 */}
         <div className="flex flex-col justify-start items-center lg:items-start lg:mr-20">
           <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold text-center lg:text-left">
-            영화, 드라마 제작자를 위한
+            영화, 드라마 영상 제작자를 위한
           </h1>
           <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold mt-2 text-center lg:text-left">
             초간편 영상 제작 솔루션
           </h1>
 
-          <h1 className="text-sm md:text-base lg:text-lg text-[#A9B291] mt-8 text-center lg:text-left">
+          <h2 className="text-sm md:text-base lg:text-lg text-[#A9B291] mt-8 mb-6 text-center lg:text-left">
             복잡한 문서 작성과 정리는 크랭이에게 맡기고 <br /> 당신의 창의성을 펼치세요.
-          </h1>
+          </h2>
 
           <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-6 mt-10">
             <div
@@ -88,14 +88,15 @@ export default function Section1() {
 
           .top h1 {
             text-align: center;
+            font-size: 1.5rem; /* 모바일 화면에 맞게 글자 크기 조정 */
           }
 
           .top div:first-child {
-            order: 2;
+            order: 2; /* 텍스트가 이미지보다 먼저 나오게 설정 */
           }
 
           .top div:last-child {
-            order: 1;
+            order: 3; /* 이미지가 텍스트 아래에 나오게 설정 */
           }
 
           .flex-col .inline-block {
@@ -108,9 +109,12 @@ export default function Section1() {
             justify-content: center;
           }
 
-          .flex-col .space-y-4 {
-            margin-top: 16px;
-            margin-bottom: 16px;
+          .flex-col .space-y-4 > div {
+            margin-bottom: 20px; /* 버튼 간격 추가 */
+          }
+
+          .text-sm {
+            font-size: 0.75rem; /* 모바일에서 더 작은 글씨로 보이도록 설정 */
           }
         }
       `}</style>
