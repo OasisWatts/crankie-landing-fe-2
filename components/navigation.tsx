@@ -53,31 +53,36 @@ const BarHeader: React.FC = () => {
       }`}
     >
       <div className="flex items-center justify-between w-full max-w-[1200px] mx-auto px-4 lg:px-0"> 
-        {/* 모바일에서도 가로 폭이 줄어들도록 max-width 설정 */}
-        
         {/* 크랭이 이미지 */}
-        <Image
-          unoptimized
-          src={crankieImage}
-          alt="Crankie Image"
-          width={40}
-          height={40}
-          className="rounded-lg cursor-pointer"
-          onClick={handleImageClick}
-        />
+        <div className="flex items-center space-x-8"> {/* 로고와 메뉴 간격 조정 */}
+          <Image
+            unoptimized
+            src={crankieImage}
+            alt="Crankie Image"
+            width={40}
+            height={40}
+            className="rounded-lg cursor-pointer"
+            onClick={handleImageClick}
+          />
 
-        {/* 데스크탑 메뉴 */}
-        <nav className="hidden lg:flex space-x-6 ml-20"> {/* 화면이 lg 이상일 때만 보이게 */}
-          {data.menus.map((menu, index) => (
-            <button
-              key={index}
-              className={`text-sm sm:text-base lg:text-lg font-bold transition-colors duration-300 text-[#286D35]`}
-              onClick={() => handleClick(data.links[index])}
-            >
-              {menu}
-            </button>
-          ))}
-        </nav>
+          {/* 데스크탑 메뉴 */}
+          <nav className="hidden lg:flex space-x-6"> {/* 화면이 lg 이상일 때만 보이게 */}
+            {data.menus.map((menu, index) => (
+              <button
+                key={index}
+                className={`text-sm sm:text-base lg:text-lg font-bold transition-colors duration-300 text-[#286D35]`}
+                onClick={() => handleClick(data.links[index])}
+              >
+                {menu}
+              </button>
+            ))}
+          </nav>
+        </div>
+
+        {/* 오른쪽 문구 */}
+        <div className="hidden lg:block text-sm sm:text-base lg:text-lg text-[#286D35] font-bold">
+          모집마감: 10월 4일까지
+        </div>
 
         {/* 모바일 메뉴 버튼 */}
         <button
