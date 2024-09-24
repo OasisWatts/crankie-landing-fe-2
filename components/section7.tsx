@@ -18,7 +18,7 @@ export default function Waitlist() {
 
   // 이미지 클릭 시 이동할 URL로 네이버 페이지를 지정
   const handleRegisterClick = () => {
-    window.open('https://forms.gle/NwWQRPDDdc1z4iVo8', '_blank');
+    window.open('https://naver.me/5vc24GYO', '_blank');
   };
 
   // 인스타그램 아이콘 클릭 시 새로운 탭에서 인스타그램 페이지를 열기
