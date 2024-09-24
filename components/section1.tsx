@@ -1,6 +1,6 @@
 'use client';
 
-import img_tmp from "@/img/front-logo.svg";
+import img_tmp from "@/img/section1_img.png";
 import Image from "next/image";
 import React from "react";
 
@@ -10,7 +10,6 @@ const links = [
   "https://www.instagram.com/crankie._/"
 ];
 
-/** minwoo */
 export default function Section1() {
   const handleScroll = () => {
     const nextSection = document.getElementById("problem");
@@ -26,31 +25,32 @@ export default function Section1() {
   return (
     <div
       id="section1"
-      className="front w-full h-screen flex items-center bg-[#E6EADC] p-10 whitespace-nowrap"
+      className="front w-full h-screen flex items-center justify-center bg-[#042F35] p-10"
     >
-      <div className="top flex flex-col-reverse lg:flex-row justify-center items-start w-full mx-auto">
-        <div className="flex flex-col justify-start md:mr-20 self-start">
-          <h1 className="text-xl md:text-3xl font-extrabold max-md:text-center">
-            영화, 드라마 영상 제작자를 위한
+      <div className="top flex flex-col-reverse lg:flex-row justify-center items-center lg:items-start w-full mx-auto lg:space-x-10">
+        {/* 텍스트 섹션 */}
+        <div className="flex flex-col justify-start items-center lg:items-start lg:mr-20">
+          <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold text-center lg:text-left">
+            영화, 드라마 제작자를 위한
           </h1>
-          <h1 className="text-xl md:text-3xl font-extrabold mt-2">
+          <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold mt-2 text-center lg:text-left">
             초간편 영상 제작 솔루션
           </h1>
 
-          <h1 className="text-sm md:text-base lg:text-lg text-[#A9B291] mt-8">
+          <h1 className="text-sm md:text-base lg:text-lg text-[#A9B291] mt-8 text-center lg:text-left">
             복잡한 문서 작성과 정리는 크랭이에게 맡기고 <br /> 당신의 창의성을 펼치세요.
           </h1>
 
-          <div className='flex justify-start space-x-6 mt-10'>
+          <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-6 mt-10">
             <div
-              className='inline-block py-4 px-8 min-w-[350px] max-w-[450px] rounded-lg text-lg md:text-xl bg-[#286D35] text-[#E6EADC] font-bold text-center cursor-pointer'
+              className="inline-block py-4 px-8 min-w-[250px] md:min-w-[350px] max-w-[450px] rounded-lg text-lg md:text-xl bg-[#E6EADC] text-[#286D35] font-bold text-center cursor-pointer"
               onClick={() => handleClick(links[0])}
             >
               {words[0]}
             </div>
 
             <div
-              className='max-md:hidden inline-block py-4 px-8 min-w-[200px] max-w-[300px] rounded-lg text-lg md:text-xl border border-[#286D35] text-[#286D35] font-bold text-center cursor-pointer'
+              className="inline-block py-4 px-8 min-w-[250px] md:min-w-[200px] max-w-[300px] rounded-lg text-lg md:text-xl border border-[#E6EADC] text-[#E6EADC] font-bold text-center cursor-pointer"
               onClick={() => handleClick(links[1])}
             >
               {words[1]}
@@ -58,17 +58,62 @@ export default function Section1() {
           </div>
         </div>
 
-        <div className="self-start">
+        {/* 이미지 섹션 */}
+        <div className="self-center mt-10 lg:mt-0">
           <Image
             unoptimized
             src={img_tmp}
             alt="front logo"
-            width={600}
-            height={600}
-            className="rounded-xl max-w-[20rem]"
+            width={1000}
+            height={1000}
+            className="rounded-xl max-w-[25rem] md:max-w-[30rem]"
           />
         </div>
       </div>
+
+      {/* 모바일 디자인 */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .top {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          }
+
+          .top div {
+            margin: 0;
+            width: 100%;
+          }
+
+          .top h1 {
+            text-align: center;
+          }
+
+          .top div:first-child {
+            order: 2;
+          }
+
+          .top div:last-child {
+            order: 1;
+          }
+
+          .flex-col .inline-block {
+            width: 100%;
+            max-width: none;
+          }
+
+          .self-center {
+            display: flex;
+            justify-content: center;
+          }
+
+          .flex-col .space-y-4 {
+            margin-top: 16px;
+            margin-bottom: 16px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
