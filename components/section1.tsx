@@ -6,8 +6,8 @@ import React from "react";
 
 const words = ["무료 베타 테스트 신청", "문의하기"];
 const links = [
-  "https://forms.gle/NwWQRPDDdc1z4iVo8",
-  "https://www.instagram.com/crankie._/"
+  "https://naver.me/5vc24GYO",
+  "http://pf.kakao.com/_yexcIn"
 ];
 
 export default function Section1() {
