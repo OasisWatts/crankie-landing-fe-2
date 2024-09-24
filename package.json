@@ -15,8 +15,6 @@
     "@headlessui/react": "^1.7.17",
     "@lottiefiles/react-lottie-player": "^3.5.4",
     "@types/node": "^20.10.4",
-    "@types/react": "^18.2.42",
-    "@types/react-dom": "^18.2.17",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.7.2",
     "emailjs-com": "^3.2.0",
@@ -33,6 +31,8 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@types/aos": "^3.0.7",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.12"
