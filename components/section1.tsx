@@ -28,8 +28,20 @@ export default function Section1() {
       className="front w-full h-screen flex items-center justify-center bg-[#042F35] p-10"
     >
       <div className="top flex flex-col-reverse lg:flex-row justify-center items-center lg:items-start w-full mx-auto lg:space-x-10">
+        {/* 이미지 섹션 */}
+        <div className="self-center mt-10 lg:mt-0 order-1">
+          <Image
+            unoptimized
+            src={img_tmp}
+            alt="front logo"
+            width={1000}
+            height={1000}
+            className="rounded-xl max-w-[25rem] md:max-w-[30rem]"
+          />
+        </div>
+
         {/* 텍스트 섹션 */}
-        <div className="flex flex-col justify-start items-center lg:items-start lg:mr-20">
+        <div className="flex flex-col justify-start items-center lg:items-start lg:mr-20 order-2">
           <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold text-center lg:text-left">
             영화, 드라마 영상 제작자를 위한
           </h1>
@@ -57,18 +69,6 @@ export default function Section1() {
             </div>
           </div>
         </div>
-
-        {/* 이미지 섹션 */}
-        <div className="self-center mt-10 lg:mt-0">
-          <Image
-            unoptimized
-            src={img_tmp}
-            alt="front logo"
-            width={1000}
-            height={1000}
-            className="rounded-xl max-w-[25rem] md:max-w-[30rem]"
-          />
-        </div>
       </div>
 
       {/* 모바일 디자인 */}
@@ -92,11 +92,11 @@ export default function Section1() {
           }
 
           .top div:first-child {
-            order: 2; /* 텍스트가 이미지보다 먼저 나오게 설정 */
+            order: 1; /* 이미지가 텍스트보다 먼저 나오게 설정 */
           }
 
           .top div:last-child {
-            order: 3; /* 이미지가 텍스트 아래에 나오게 설정 */
+            order: 2; /* 텍스트가 이미지 아래에 나오게 설정 */
           }
 
           .flex-col .inline-block {
