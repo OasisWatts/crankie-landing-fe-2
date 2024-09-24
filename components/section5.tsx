@@ -1,9 +1,8 @@
-import img_tmp from '@/img/check-img.svg';
-import gif1_tmp from '@/img/second_gif-min.gif';
-import gif2_tmp from '@/img/first_gif.gif';
 import Image, { StaticImageData } from 'next/image';
-
-const words = ["간편하게", "확실하게", "편하게", "효율적으로"]
+import gif_imageUpload from '@/img/5page_imageUpload.gif'
+import gif_share from '@/img/5page_share.gif'
+import gif_schedule from '@/img/5page_schedule.gif'
+import gif_sceneList from '@/img/5page_sceneList.gif'
 
 export default function Section5({ data }: { data: any }) {
   return (
@@ -41,13 +40,13 @@ function Blocks() {
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center bg-[#F6F9F0] p-10 whitespace-nowrap">
       <div
-        className="bot w-full flex-1 flex flex-col items-center justify-center p-4 mt-10"
+        className="bot flex-1 flex flex-col items-center justify-center p-4 mt-10"
         style={{ flexBasis: '80%' }}
       >
         {/** first block */}
         <Block
           isRight={true}
-          gif={gif1_tmp}
+          gif={gif_sceneList}
           tag="씬 리스트"
           highlight='클릭 한 번에,'
           title="시나리오를 씬 리스트로"
@@ -56,16 +55,18 @@ function Blocks() {
         {/** second block */}
         <Block
           isRight={false}
-          gif={gif2_tmp}
+          gif={gif_imageUpload}
           tag="스토리보드 작성"
           highlight='이미지 업로드를 통한'
           title="간쳔한 스토리보드 작성"
           texts={["카메라의 샷, 무브먼트, 연출적 요소", "그 외 필요한 정보들도 쉽게 기입할 수 있습니다."]}
+          imageContainerSize="relative md:left-[-40px]"
+          textContainerSize="relative md:right-[-40px]"
         />
         {/** third block */}
         <Block
           isRight={true}
-          gif={gif1_tmp}
+          gif={gif_schedule}
           tag="촬영 계획 작성"
           highlight='직관적인 컷수 확인을 통한'
           title="효율적인 촬영 계획"
@@ -74,11 +75,13 @@ function Blocks() {
         {/** forth block */}
         <Block
           isRight={false}
-          gif={gif2_tmp}
+          gif={gif_share}
           tag="협업과 공유"
           highlight='모든 작업 과정'
           title='팀원과 함께 빠르고, 확실하게'
           texts={['팀원을 등록하면 모든 과정을', '빠르게 팀원과 공유하고 함께 할 수 있습니다.']}
+          imageContainerSize="relative md:left-[-40px]"
+          textContainerSize="relative md:right-[-40px]"
         />
       </div>
     </div>
@@ -92,29 +95,48 @@ interface BlockInterface {
   highlight: string
   title: string
   texts: string[]
+  imageContainerSize?: string
+  textContainerSize?: string
 }
-
-export function Block({ isRight, gif, tag, highlight, title, texts }: BlockInterface) {
+export function Block({ isRight, gif, tag, highlight, title, texts, imageContainerSize, textContainerSize }: BlockInterface) {
   return (
     <div
-      className={`w-full flex flex-col ${isRight ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-center mb-10`}
+      className={`w-full flex flex-col ${isRight ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-center mb-20`}
       style={{ flexBasis: '50%' }}
     >
       <div className='w-full h-[0.1rem] bg-[#E6EADC] md:hidden mb-10'></div>
-      <div className={`flex-1 flex items-center justify-center ${isRight ? "md:justify-start" : "md:justify-end"} mb-6 md:mb-0`}>
-        <div className="rounded">
+
+      {/* Container for Image */}
+      <div
+        className={`flex-1 flex items-center justify-center mb-6 md:mb-0 ${imageContainerSize ?? ""}`}
+        style={{
+          padding: '0 20px',
+          flex: '1 1 50%', // Equal flex properties for both containers
+          maxWidth: '50%' // Prevent the container from growing too large
+        }}
+      >
+        <div className="rounded max-w-[90vw] md:max-w-[600px]">
           <Image
             src={gif}
             alt="Feature Image"
             width={713}
             height={538}
             className="w-full h-auto rounded-sm"
+            style={{ maxWidth: '100%', height: 'auto' }}
           />
         </div>
       </div>
-      <div className={`flex-1 flex flex-col items-center md:items-start md:text-left ${isRight ? "" : "md:pl-20"} justify-center text-center`}>
+
+      {/* Container for Text */}
+      <div
+        className={`flex-1 flex flex-col items-center md:items-start md:text-left ${isRight ? "" : "md:pl-20"} justify-center text-center ${textContainerSize ?? ""}`}
+        style={{
+          flex: '1 1 50%', // Equal flex properties for both containers
+          maxWidth: '50%', // Prevent the container from growing too large
+          padding: '0 20px',
+        }}
+      >
         <p className='text-xs sm:text-sm lg:text-md font-bold mb-3 text-[#286D35]'>{tag}</p>
-        {/* <p className='text-xs sm:text-sm lg:text-md px-2 py-[0.1rem] mb-3 text-[#008415] bg-[#C8F169] rounded-xs'>{tag}</p> */}
         <div className="text-2xl md:text-xl lg:text-2xl font-bold mb-4">
           <p className='text-[#286D35]'> {highlight}</p>
           <p> {title}</p>
@@ -126,5 +148,5 @@ export function Block({ isRight, gif, tag, highlight, title, texts }: BlockInter
         </div>
       </div>
     </div>
-  )
+  );
 }
