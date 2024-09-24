@@ -27,29 +27,17 @@ export default function Section1() {
       id="section1"
       className="front w-full h-screen flex items-center justify-center bg-[#042F35] p-10"
     >
-      <div className="top flex flex-col-reverse lg:flex-row justify-center items-center lg:items-start w-full mx-auto lg:space-x-10">
-        {/* 이미지 섹션 */}
-        <div className="self-center mt-10 lg:mt-0 order-1">
-          <Image
-            unoptimized
-            src={img_tmp}
-            alt="front logo"
-            width={1000}
-            height={1000}
-            className="rounded-xl max-w-[25rem] md:max-w-[30rem]"
-          />
-        </div>
-
+      <div className="top flex flex-col lg:flex-row justify-center items-center lg:items-start w-full mx-auto lg:space-x-10">
         {/* 텍스트 섹션 */}
-        <div className="flex flex-col justify-start items-center lg:items-start lg:mr-20 order-2">
-          <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold text-center lg:text-left">
+        <div className="flex flex-col justify-start items-center lg:items-start lg:mr-20 order-2 lg:order-1 text-center lg:text-left mt-8 lg:mt-0">
+          <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold">
             영화, 드라마 영상 제작자를 위한
           </h1>
-          <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold mt-2 text-center lg:text-left">
+          <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold mt-2">
             초간편 영상 제작 솔루션
           </h1>
 
-          <h2 className="text-sm md:text-base lg:text-lg text-[#A9B291] mt-8 mb-6 text-center lg:text-left">
+          <h2 className="text-sm md:text-base lg:text-lg text-[#A9B291] mt-8 mb-6">
             복잡한 문서 작성과 정리는 크랭이에게 맡기고 <br /> 당신의 창의성을 펼치세요.
           </h2>
 
@@ -69,6 +57,18 @@ export default function Section1() {
             </div>
           </div>
         </div>
+
+        {/* 이미지 섹션 */}
+        <div className="self-center mt-5 lg:mt-0 order-1 lg:order-2 flex justify-center">
+          <Image
+            unoptimized
+            src={img_tmp}
+            alt="front logo"
+            width={1000}
+            height={1000}
+            className="rounded-xl max-w-[25rem] md:max-w-[30rem] h-auto"
+          />
+        </div>
       </div>
 
       {/* 모바일 디자인 */}
@@ -87,21 +87,7 @@ export default function Section1() {
           }
 
           .top h1 {
-            text-align: center;
             font-size: 1.5rem; /* 모바일 화면에 맞게 글자 크기 조정 */
-          }
-
-          .top div:first-child {
-            order: 1; /* 이미지가 텍스트보다 먼저 나오게 설정 */
-          }
-
-          .top div:last-child {
-            order: 2; /* 텍스트가 이미지 아래에 나오게 설정 */
-          }
-
-          .flex-col .inline-block {
-            width: 100%;
-            max-width: none;
           }
 
           .self-center {
