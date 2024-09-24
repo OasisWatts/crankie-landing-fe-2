@@ -5,6 +5,7 @@ import crankieImage from "@/img/navigationlogo.png";
 
 const BarHeader: React.FC = () => {
   const [isBar, setIsBar] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // 모바일 메뉴 상태 추가
 
   const data = {
     menus: ["신청하기", "문의하기"],
@@ -37,6 +38,11 @@ const BarHeader: React.FC = () => {
     window.open(link, "_blank");
   };
 
+  // 모바일 메뉴 토글 핸들러
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div
       id="bar-header"
@@ -46,7 +52,9 @@ const BarHeader: React.FC = () => {
           : "bg-[#E6EADC] text-white"
       }`}
     >
-      <div className="flex items-center ml-40">
+      <div className="flex items-center justify-between w-full max-w-[1200px] mx-auto px-4 lg:px-0"> 
+        {/* 모바일에서도 가로 폭이 줄어들도록 max-width 설정 */}
+        
         {/* 크랭이 이미지 */}
         <Image
           unoptimized
@@ -57,18 +65,46 @@ const BarHeader: React.FC = () => {
           className="rounded-lg cursor-pointer"
           onClick={handleImageClick}
         />
-        {/* 사전예약/문의하기 메뉴 */}
-        <nav className="flex space-x-6 ml-20"> {/* 이미지와 메뉴 사이에 margin-left를 더 넓힘 */}
+
+        {/* 데스크탑 메뉴 */}
+        <nav className="hidden lg:flex space-x-6 ml-20"> {/* 화면이 lg 이상일 때만 보이게 */}
           {data.menus.map((menu, index) => (
             <button
               key={index}
-              className={`text-sm sm:text-base lg:text-lg font-bold transition-colors duration-300 text-[#286D35]`} // 텍스트 색상 변경
+              className={`text-sm sm:text-base lg:text-lg font-bold transition-colors duration-300 text-[#286D35]`}
               onClick={() => handleClick(data.links[index])}
             >
               {menu}
             </button>
           ))}
         </nav>
+
+        {/* 모바일 메뉴 버튼 */}
+        <button
+          className="lg:hidden flex flex-col space-y-1 cursor-pointer"
+          onClick={toggleMobileMenu}
+        >
+          <span className="w-6 h-[2px] bg-[#286D35]"></span>
+          <span className="w-6 h-[2px] bg-[#286D35]"></span>
+          <span className="w-6 h-[2px] bg-[#286D35]"></span>
+        </button>
+
+        {/* 모바일 메뉴 */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden fixed top-[65px] left-0 w-full bg-white shadow-md z-[99]">
+            <nav className="flex flex-col items-center space-y-4 py-4">
+              {data.menus.map((menu, index) => (
+                <button
+                  key={index}
+                  className={`text-sm font-bold transition-colors duration-300 text-[#286D35]`}
+                  onClick={() => handleClick(data.links[index])}
+                >
+                  {menu}
+                </button>
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
     </div>
   );
