@@ -123,6 +123,7 @@ export function Block({ isRight, gif, tag, highlight, title, texts, imageContain
             height={538}
             className="w-full h-auto rounded-sm"
             style={{ maxWidth: '100%', height: 'auto' }}
+            unoptimized
           />
         </div>
       </div>
@@ -137,7 +138,7 @@ export function Block({ isRight, gif, tag, highlight, title, texts, imageContain
         }}
       >
         <p className='text-xs sm:text-sm lg:text-md font-bold mb-3 text-[#286D35]'>{tag}</p>
-        <div className="text-2xl md:text-xl lg:text-2xl font-bold mb-4">
+        <div className="text-xl lg:text-2xl font-bold mb-4">
           <p className='text-[#286D35]'> {highlight}</p>
           <p> {title}</p>
         </div>
