@@ -58,7 +58,7 @@ function Blocks() {
           gif={gif_imageUpload}
           tag="스토리보드 작성"
           highlight='이미지 업로드를 통한'
-          title="간쳔한 스토리보드 작성"
+          title="간편한 스토리보드 작성"
           texts={["카메라의 샷, 무브먼트, 연출적 요소", "그 외 필요한 정보들도 쉽게 기입할 수 있습니다."]}
           imageContainerSize="relative md:left-[-40px]"
           textContainerSize="relative md:right-[-40px]"
