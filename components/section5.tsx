@@ -25,7 +25,7 @@ function Introduction() {
         <h1 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#042F35]">
           모든 영상 제작 과정
         </h1>
-        <div className='text-xl md:text-2xl lg:text-3xl font-bold mt-10 lg:mt-15'>
+        <div className='text-2xl md:text-3xl lg:text-4xl font-bold mt-10 lg:mt-15'>
           <p className='inline text-[#286D35] mr-2'>Simple</p>
           <p className='inline mr-2'>하고</p>
           <p className='inline text-[#286D35] mr-2'>Creative</p>
