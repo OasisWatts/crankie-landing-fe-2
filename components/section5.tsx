@@ -4,7 +4,7 @@ import gif_share from '@/img/5page_share.gif'
 import gif_schedule from '@/img/5page_schedule.gif'
 import gif_sceneList from '@/img/5page_sceneList.gif'
 
-export default function Section5({ data }: { data: any }) {
+export default function Section5() {
   return (
     <>
       <Introduction />

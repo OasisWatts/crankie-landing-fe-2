@@ -89,7 +89,6 @@ export default function Section2() {
               {/* 작은 박스 아이콘 */}
               <div className="absolute inset-0 rounded-lg">
                 <Image
-                  unoptimized
                   src={boxNumber === 1 ? box1Icon : boxNumber === 2 ? box2Icon : box3Icon}
                   alt={`박스 ${boxNumber} 아이콘`}
                   width={180}

@@ -7,10 +7,8 @@ import insta_colored from '@/img/insta_btn_colored.svg';
 import insta from '@/img/insta_btn_uncolored.svg';
 import img1 from '@/img/section7_img1.png';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 export default function Waitlist() {
-  const router = useRouter();
 
   // 이미지 상태 관리 (기본: beta, insta)
   const [betaImage, setBetaImage] = useState(beta);
@@ -51,7 +49,6 @@ export default function Waitlist() {
       {/* 하단 이미지 및 인스타그램 아이콘 부분 */}
       <div className="bot w-full flex-1 flex flex-col sm:flex-row items-center justify-center">
         <Image
-          unoptimized
           src={betaImage} // 상태로 관리되는 beta 이미지
           alt="waitlist image"
           width={240}
@@ -63,7 +60,6 @@ export default function Waitlist() {
           style={{ cursor: 'pointer' }}
         />
         <Image
-          unoptimized
           src={instaImage} // 상태로 관리되는 insta 이미지
           alt="instagram icon"
           width={240}

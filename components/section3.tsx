@@ -1,9 +1,8 @@
-import img_tmp from '@/img/check-img.svg';
 import problem_img from '@/img/first_page_Image.png'
 import Image from "next/image";
 
 /** J */
-export default function Section3({ data }: { data: { title1: string, title2: string, paragraph1: string, paragraph2: string } }) {
+export default function Section3() {
     return (
         <div id="problem" className="bg-[#F6F9F0] text-center w-full flex flex-col lg:flex-row items-center justify-center px-10 py-20">
             {/* 텍스트 섹션 */}
@@ -22,7 +21,6 @@ export default function Section3({ data }: { data: { title1: string, title2: str
             <div className="flex-1 w-full flex flex-col items-center mb-10 justify-center p-4 sm:p-6 lg:p-8" style={{ flexBasis: '60%' }}>
                 <div className="w-full max-w-[1000px]">
                     <Image
-                        unoptimized
                         src={problem_img}
                         alt="problem pic"
                         layout="responsive"

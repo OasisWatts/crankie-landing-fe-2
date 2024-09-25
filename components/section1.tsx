@@ -61,7 +61,6 @@ export default function Section1() {
         {/* 이미지 섹션 */}
         <div className="self-center mt-5 lg:mt-0 order-1 lg:order-2 flex justify-center">
           <Image
-            unoptimized
             src={img_tmp}
             alt="front logo"
             width={1000}

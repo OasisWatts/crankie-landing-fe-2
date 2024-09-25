@@ -17,11 +17,11 @@ export default function Home() {
 
   return (
     <div>
-      <Section1 data={jsonData.Front} />
+      <Section1 />
       {/* <Section2 /> */}
-      <Section3 data={jsonData.Problem} />
-      <Section4 data={jsonData.Solution} />
-      <Section5 data={jsonData.FeatureCasting} />
+      <Section3 />
+      <Section4 />
+      <Section5 />
       <Section6 />
       <CrankIn />
       <Section7 />

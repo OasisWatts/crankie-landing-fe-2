@@ -1,8 +1,5 @@
-import img_tmp from '@/img/crankie-logo2.svg';
-import Image from "next/image";
-
 /** J */
-export default function Section4({ data }: { data: { title1: string, title2: string, explanation1: string, explanation2: string } }) {
+export default function Section4() {
 
     return (
         <div className="bg-[#042F35] w-full h-[60vh] flex flex-col md:flex-row justify-center items-center p-10">

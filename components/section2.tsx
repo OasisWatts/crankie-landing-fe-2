@@ -15,10 +15,11 @@ export default function Section2() {
 
       <div className="flex justify-center">
         <Image
-          src={firstGif} 
+          unoptimized
+          src={firstGif}
           alt="movie gif"
-          width={1400} 
-          height={1000} 
+          width={1400}
+          height={1000}
           className="rounded-lg"
         />
       </div>
