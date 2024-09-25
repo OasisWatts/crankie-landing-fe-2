@@ -95,6 +95,12 @@ export default function Section1() {
             justify-content: center;
           }
 
+          /* 버튼 정렬을 중앙으로 */
+          .flex-col {
+            justify-content: center;
+            align-items: center;
+          }
+
           .flex-col .space-y-4 > div {
             margin-bottom: 20px; /* 버튼 간격 추가 */
           }
