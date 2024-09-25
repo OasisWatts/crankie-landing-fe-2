@@ -83,7 +83,7 @@ export default function Section2() {
           {[1, 2, 3].map((boxNumber) => (
             <div
               key={boxNumber}
-              className="relative h-15 w-15 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-[125px] lg:w-[125px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer"
+              className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-[125px] lg:w-[125px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer"
               onClick={() => handleBoxClick(boxNumber)}
             >
               {/* 작은 박스 아이콘 */}
