@@ -21,6 +21,7 @@ export default function Section3() {
             <div className="flex-1 w-full flex flex-col items-center mb-10 justify-center p-4 sm:p-6 lg:p-8" style={{ flexBasis: '60%' }}>
                 <div className="w-full max-w-[1000px]">
                     <Image
+                        unoptimized
                         src={problem_img}
                         alt="problem pic"
                         layout="responsive"

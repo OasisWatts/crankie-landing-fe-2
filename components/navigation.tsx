@@ -47,14 +47,15 @@ const BarHeader: React.FC = () => {
     <div
       id="bar-header"
       className={`w-full p-4 flex items-center h-[65px] transition-colors duration-300 ${isBar
-          ? "fixed top-0 left-0 right-0 bg-white shadow-md z-[100]"
-          : "bg-white"
+        ? "fixed top-0 left-0 right-0 bg-white shadow-md z-[100]"
+        : "bg-white"
         }`}
     >
       <div className="flex items-center justify-between w-full max-w-[1200px] mx-auto px-4 lg:px-0">
         {/* 크랭이 이미지 */}
         <div className="flex items-center space-x-8"> {/* 로고와 메뉴 간격 조정 */}
           <Image
+            unoptimized
             src={crankieImage}
             alt="Crankie Image"
             width={40}

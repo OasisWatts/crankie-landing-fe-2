@@ -33,6 +33,7 @@ export default function Waitlist() {
       <div className="img w-full flex-1 flex flex-row items-center justify-center">
         <div className="img1">
           <Image
+            unoptimized
             src={img1}
             alt="img1"
             width={700} // 기본 너비 설정
@@ -49,6 +50,7 @@ export default function Waitlist() {
       {/* 하단 이미지 및 인스타그램 아이콘 부분 */}
       <div className="bot w-full flex-1 flex flex-col sm:flex-row items-center justify-center">
         <Image
+          unoptimized
           src={betaImage} // 상태로 관리되는 beta 이미지
           alt="waitlist image"
           width={240}
@@ -60,6 +62,7 @@ export default function Waitlist() {
           style={{ cursor: 'pointer' }}
         />
         <Image
+          unoptimized
           src={instaImage} // 상태로 관리되는 insta 이미지
           alt="instagram icon"
           width={240}
