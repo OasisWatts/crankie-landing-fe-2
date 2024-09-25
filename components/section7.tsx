@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react';
-import beta_colored from '@/img/색o_무료 베타 버튼.svg';
-import beta from '@/img/색x_무료 베타 버튼.svg';
-import insta_colored from '@/img/색o_인스타 버튼.svg';
-import insta from '@/img/색x_인스타 버튼.svg';
+import beta_colored from '@/img/beta_btn_colored.svg';
+import beta from '@/img/beta_btn_uncolored.svg';
+import insta_colored from '@/img/insta_btn_colored.svg';
+import insta from '@/img/insta_btn_uncolored.svg';
 import img1 from '@/img/section7_img1.png';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
