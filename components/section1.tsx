@@ -34,11 +34,11 @@ export default function Section1() {
             영화, 드라마 영상 제작자를 위한
           </h1>
           <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold mt-2">
-            초간편 영상 제작 솔루션
+            똑똑한 영상 제작 워크스페이스
           </h1>
 
           <h2 className="text-sm md:text-base lg:text-lg text-[#A9B291] mt-8 mb-6">
-            복잡한 문서 작성과 정리는 크랭이에게 맡기고 <br /> 당신의 창의성을 펼치세요.
+            복잡한 문서 작업은 크랭이에게 맡기고 <br /> 당신의 창의성을 펼치세요.
           </h2>
 
           <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-6 mt-10">

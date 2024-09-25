@@ -8,7 +8,7 @@ export default function Section4() {
                 <div className="title mb-10">
                     {/* 비효율적인 작업: 상대적으로 작은 글씨 */}
                     <h1 className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#C8F169]">
-                        비효율적인 작업
+                        시간 낭비
                     </h1>
                     {/* STOP: 상대적으로 큰 글씨 */}
                     <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-[#C8F169]">
