@@ -10,9 +10,9 @@ const BarHeader: React.FC = () => {
   const data = {
     menus: ["신청하기", "문의하기"],
     links: [
-      "https://forms.gle/NwWQRPDDdc1z4iVo8",
-      "https://www.instagram.com/crankie._/",
-    ],
+      "https://naver.me/5vc24GYO",
+      "https://www.instagram.com/crankie._/"
+    ]
   };
 
   // 스크롤 핸들러 설정
