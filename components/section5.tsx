@@ -112,7 +112,7 @@ export function Block({ isRight, gif, tag, highlight, title, texts, imageContain
         style={{
           padding: '0 20px',
           flex: '1 1 50%', // Equal flex properties for both containers
-          maxWidth: '50%' // Prevent the container from growing too large
+          maxWidth: '100%' // Prevent the container from growing too large
         }}
       >
         <div className="rounded max-w-[90vw] md:max-w-[600px]">
