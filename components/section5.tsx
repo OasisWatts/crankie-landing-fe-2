@@ -22,7 +22,7 @@ function Introduction() {
         <p className='text-sm md:text-base lg:text-lg text-[#818D62]'>
           시나리오부터 계획까지
         </p>
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mt-2 lg:mt-5 text-[#042F35]">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#042F35]">
           모든 영상 제작 과정
         </h1>
         <div className='text-xl md:text-2xl lg:text-3xl font-bold mt-10 lg:mt-15'>

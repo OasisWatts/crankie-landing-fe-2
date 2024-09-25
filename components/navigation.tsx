@@ -49,7 +49,7 @@ const BarHeader: React.FC = () => {
       className={`w-full p-4 flex items-center h-[65px] transition-colors duration-300 ${
         isBar
           ? "fixed top-0 left-0 right-0 bg-white shadow-md z-[100]"
-          : "bg-[#E6EADC] text-white"
+          : "bg-white"
       }`}
     >
       <div className="flex items-center justify-between w-full max-w-[1200px] mx-auto px-4 lg:px-0"> 
@@ -80,7 +80,7 @@ const BarHeader: React.FC = () => {
         </div>
 
         {/* 오른쪽 문구 */}
-        <div className="hidden lg:block text-sm sm:text-base lg:text-lg text-[#286D35] font-bold">
+        <div className="hidden lg:block text-xs sm:text-sm lg:text-base text-[#286D35] font-bold">
           모집마감: 10월 4일까지
         </div>
 

@@ -28,9 +28,9 @@ export default function Waitlist() {
 
   return (
     <div className="bg-[#F6F9F0] text-center w-full h-screen flex flex-col items-center justify-center p-4">
-      <div className="text-[#A9B291] top w-full flex-1 flex flex-col items-center justify-end sm:ml-10">
-        <h1 className="text-xl sm:text-3xl font-bold">크랭이는 영상 제작자의 편의를 위해</h1>
-        <h1 className="text-xl sm:text-3xl font-bold">최선을 다하겠습니다</h1>
+      <div className="text-[#A9B291] top w-full flex-1 flex flex-col items-center mb-10 justify-end sm:ml-10">
+        <h1 className="text-lg sm:text-2xl font-normal">크랭이는 영상 제작자의 편의를 위해</h1>
+        <h1 className="text-lg sm:text-2xl font-normal">최선을 다하겠습니다</h1>
       </div>
       <div className="img w-full flex-1 flex flex-row items-center justify-center">
         <div className="img1">
@@ -44,8 +44,8 @@ export default function Waitlist() {
       </div>
       {/* 상단 텍스트 부분 */}
       <div className="text-[#2B6C36] top w-full flex-1 flex flex-col items-center justify-end sm:ml-10">
-        <h1 className="text-xl sm:text-3xl font-bold">지금 신청하시고</h1>
-        <h1 className="text-xl sm:text-3xl font-bold">크랭이의 빠른 소식과 무료 서비스 혜택을 받으세요</h1>
+        <h1 className="text-xl sm:text-3xl font-extrabold">지금 신청하시고</h1>
+        <h1 className="text-xl sm:text-3xl font-extrabold">크랭이의 빠른 소식과 무료 서비스 혜택을 받으세요</h1>
       </div>
 
       {/* 하단 이미지 및 인스타그램 아이콘 부분 */}

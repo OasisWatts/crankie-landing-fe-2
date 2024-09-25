@@ -69,21 +69,21 @@ export default function Section2() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white p-4">
       {/* 헤더 섹션 */}
-      <div className="mb-6 text-center">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black-100">
+      <div className="mt-10 mb-3 text-center">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#5F5F5F]">
           최신 기술을 활용한 <br />
-          새로운 제작 과정을 경험하세요.
+          새로운 제작 과정을 경험하세요
         </h1>
       </div>
 
       {/* 메인 섹션 */}
       <div className="w-full max-w-6xl flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 lg:gap-20">
         {/* 작은 박스들 */}
-        <div className="flex sm:flex-col justify-between items-center gap-6 sm:gap-10 lg:gap-20">
+        <div className="flex sm:flex-col justify-between items-center gap-3 sm:gap-5 lg:gap-10">
           {[1, 2, 3].map((boxNumber) => (
             <div
               key={boxNumber}
-              className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-[160px] lg:w-[160px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer"
+              className="relative h-15 w-15 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-[125px] lg:w-[125px] bg-white rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer"
               onClick={() => handleBoxClick(boxNumber)}
             >
               {/* 작은 박스 아이콘 */}
