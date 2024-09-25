@@ -9,8 +9,8 @@ import Section7 from "@/components/section7";
 import CrankIn from "@/components/crankin";
 
 export const metadata = {
-  title: '크랭이 - 빠른 크랭크인을 위한 프리프로덕션 협업툴',
-  description: '크랭이와 함께 캐스팅에 걸리는 시간을 줄여보아요'
+  title: '크랭이 - 영화, 드라마 영상 제작자를 위한 초간편 영상 제작 솔루션',
+  description: '복잡한 문서 작성과 정리는 크랭이에게 맡기고 당신의 창의성을 펼치세요!'
 }
 
 export default function Home() {
