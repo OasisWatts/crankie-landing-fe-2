@@ -1,8 +1,20 @@
+import likelion_logo from '@/img/likelion_logo.png'
+import Image from "next/image";
+
+
 /** minwoo */
 export default function Footer() {
     return (
       <footer className="bg-white text-black py-6">
-        <div className="container mx-auto px-4 max-w-screen-lg">
+        <div className="logo w-screen flex flex-row items-center justify-center">
+          <Image
+              unoptimized
+              src={likelion_logo}
+              alt="likelion logo"
+              className="max-w-[25rem] md:max-w-[30rem] h-auto"
+            />
+        </div>
+        {/* <div className="container mx-auto px-4 max-w-screen-lg">
           <div className="flex justify-between items-start">
 
             <div className="space-y-2">
@@ -25,7 +37,7 @@ export default function Footer() {
               <p>고객지원 : 전화</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </footer>
     );
   }

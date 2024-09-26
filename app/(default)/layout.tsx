@@ -27,7 +27,7 @@ export default function DefaultLayout({
       <main className="grow">
         <Navigation />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </main>
     </div>
   )
