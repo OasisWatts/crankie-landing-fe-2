@@ -80,7 +80,7 @@ const BarHeader: React.FC = () => {
 
         {/* 오른쪽 문구 */}
         <div className="hidden lg:block text-xs sm:text-sm lg:text-base text-[#286D35] font-bold">
-          모집마감: 10월 4일까지
+          모집마감: 10월 6일까지
         </div>
 
         {/* 모바일 메뉴 버튼 */}
