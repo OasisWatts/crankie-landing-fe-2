@@ -31,7 +31,7 @@ export default function Section1() {
         {/* 텍스트 섹션 */}
         <div className="flex flex-col justify-start items-center lg:items-start lg:mr-20 order-2 lg:order-1 text-center lg:text-left mt-8 lg:mt-0">
           <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold">
-            영화, 드라마 영상 제작자를 위한
+            영상 제작자를 위한
           </h1>
           <h1 className="text-[#E6EADC] text-2xl md:text-4xl font-extrabold mt-2">
             똑똑한 영상 제작 워크스페이스
